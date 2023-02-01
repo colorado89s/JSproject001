@@ -89,9 +89,60 @@ function esercizio6mapContracted() {
 }
 
 // 7.	Dato l’array comici2 fare il console log degli elementi con altezza maggiore di 155
+function esercizio7() {
+  comici2.forEach((comico) => {
+    if (comico.altezza >= 155) {
+      console.log(comico);
+    }
+  });
+}
+function esercizio7parametrico(altezzaStringa) {
+  arrayIn.forEach((el, i) => {
+    if (el.altezza >= altezzaStringa) {
+      console.log(el, i);
+    }
+  });
+}
 // 8.	Dato l’array comici2 fare il console log dei soli elementi che hanno il name che inizia per la ‘G’
+function esercizio8(){
+  comici2.forEach(
+      (comico, i) => {
+          if(comico.name.startsWith('G')){
+              console.log(comico, i)
+          }
+      }
+  )
+}
+function esercizio8(inizialeString){
+  comici2.forEach(
+      (el(nomeasdasd, altezza), i) => {
+          if(el.nomeasdasd.startsWith(inizialeString)){
+              console.log(el, i)
+          }
+      }
+  )
+}
 // 8.1.	Dato l’array comici2 ottenere un nuovo array con l'altezza in metri
+function esercizio81(){
+  let nuovoArray = comici2.map((comico) => {
+      let variabileAppoggio = comico.altezza / 100;
+      return variabileAppoggio;
+  });
+  return nuovoArray;
+}
+function esercizio81contracted() {
+  return comici2.map((comico) => {
+    return comico.altezza / 100;
+  });
+}
 // 8.2.	Dato l’array comici2 ottenere un nuovo array con l'aggiunta del sesso maschile
+function esercizio82(){
+  let nuovoArray = comici2.map((comico) => {
+      let variabileAppoggio = comico.sesso = 'M';
+      return comico.add(variabileAppoggio);
+  });
+  return nuovoArray;
+}
 // 9.	Dato l’array char1 ottenere un altro array contenente gli elementi b1,b2,b3
 // 10.	Dato l’array char2 ottenere un altro array che ha per ogni elemento la concatenazione dell’elemento a e b di partenza divisi dal trattino (ovvero: ‘a1-b1’,’a2-b2’ etc..)
 // 11.	Dato l’array disney1 ottenere un altro array contenente solo gli elementi che iniziano per 'P'
