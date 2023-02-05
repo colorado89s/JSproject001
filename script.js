@@ -182,6 +182,7 @@ var disney2 = [
   { name: "Pluto", type: "Dog" },
   { name: "Topolino", type: "Mouse" },
 ];
+asdasdasdasd
 // tip: ovvero un array contenente solo un item {name:'Topolino', type:'Mouse'}
 // 13.	Dato l’array disney1 fare il console.log dell’indice di un determinato elemento (es, l’indice di ‘Pippo’ sarà 0)
 // 14.	Dato l’array disney2 fare il console.log dell’indice di un elemento che ha un dato name (es. se il name == ‘Pippo’ l’indice sarà 0)
