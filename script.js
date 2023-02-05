@@ -104,13 +104,13 @@ function esercizio7parametrico(altezzaStringa) {
   });
 }
 // 8.	Dato l’array comici2 fare il console log dei soli elementi che hanno il name che inizia per la ‘G’
-function esercizio8(){
+function esercizio8() {
   comici2.forEach(
-      (comico, i) => {
-          if(comico.name.startsWith('G')){
-              console.log(comico, i)
-          }
+    (comico, i) => {
+      if (comico.name.startsWith('G')) {
+        console.log(comico, i)
       }
+    }
   )
 }
 // function esercizio8(inizialeString){
@@ -123,10 +123,10 @@ function esercizio8(){
 //   )
 // }
 // 8.1.	Dato l’array comici2 ottenere un nuovo array con l'altezza in metri
-function esercizio81(){
+function esercizio81() {
   let nuovoArray = comici2.map((comico) => {
-      let variabileAppoggio = comico.altezza / 100;
-      return variabileAppoggio;
+    let variabileAppoggio = comico.altezza / 100;
+    return variabileAppoggio;
   });
   return nuovoArray;
 }
@@ -136,27 +136,52 @@ function esercizio81contracted() {
   });
 }
 // 8.2.	Dato l’array comici2 ottenere un nuovo array con l'aggiunta del sesso maschile
-comici2.forEach(function(comico){
-  comico.sesso='m';
-  });
-console.log(comici2);
-
-function esercizio82() {
+function esercizio82map() {
   return comici2.map((comico) => {
-    return comico.sesso="m";
+    return comico.sesso = "m";
   });
 }
-
-function esercizio82parametrico(valore, valoreStringa) {
-  arrayObj.forEach((el) =>{
-    el.valore = valoreStringa;
-    });
-  console.log(arrayObj);
+function esercizio82each() {
+  comici2.forEach((el) => {
+    el.sesso = "m";
+  });
+  console.log(comici2);
 }
 // 9.	Dato l’array char1 ottenere un altro array contenente gli elementi b1,b2,b3
+function esercizio9() {
+  return char1.map((el, posizione) => {
+    posizione = posizione + 1;
+    return el = 'b' + posizione
+  });
+  console.log(char1);
+}
+function esercizio9(lettera) {
+  return arrayProva.map((el, posizione) => {
+    posizione = posizione + 1;
+    return el = lettera + posizione
+  });
+}
 // 10.	Dato l’array char2 ottenere un altro array che ha per ogni elemento la concatenazione dell’elemento a e b di partenza divisi dal trattino (ovvero: ‘a1-b1’,’a2-b2’ etc..)
+function esercizio10() {
+  return char2.map((el) => {
+    return el = el.a + "-" + el.b
+  })
+}
 // 11.	Dato l’array disney1 ottenere un altro array contenente solo gli elementi che iniziano per 'P'
+var disney1 = ["Pippo", "Pluto", "Topolino"];
+function esercizio11(){
+  return disney1.map((el)=>{
+    if(el.startsWith('P'))
+    return el
+  })
+}
+
 // 12.	Dato l’array disney2 ottenere un altro array che contiene solo gli oggetti con type==='Mouse'
+var disney2 = [
+  { name: "Pippo", type: "Dog" },
+  { name: "Pluto", type: "Dog" },
+  { name: "Topolino", type: "Mouse" },
+];
 // tip: ovvero un array contenente solo un item {name:'Topolino', type:'Mouse'}
 // 13.	Dato l’array disney1 fare il console.log dell’indice di un determinato elemento (es, l’indice di ‘Pippo’ sarà 0)
 // 14.	Dato l’array disney2 fare il console.log dell’indice di un elemento che ha un dato name (es. se il name == ‘Pippo’ l’indice sarà 0)
