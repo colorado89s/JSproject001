@@ -60,7 +60,7 @@ function esercizio5() {
   });
 }
 function esercizio5parametrico(arrayIn, stringa) {
-  arrayIn.forEach((el, i) => {
+  arrayIn.forEach((el, _i) => {
     if (el.includes(stringa)) {
       console.log(el);
     }
@@ -113,15 +113,15 @@ function esercizio8(){
       }
   )
 }
-function esercizio8(inizialeString){
-  comici2.forEach(
-      (el(nomeasdasd, altezza), i) => {
-          if(el.nomeasdasd.startsWith(inizialeString)){
-              console.log(el, i)
-          }
-      }
-  )
-}
+// function esercizio8(inizialeString){
+//   comici2.forEach(
+//       (el(nomeasdasd, altezza), i) => {
+//           if(el.nomeasdasd.startsWith(inizialeString)){
+//               console.log(el, i)
+//           }
+//       }
+//   )
+// }
 // 8.1.	Dato l’array comici2 ottenere un nuovo array con l'altezza in metri
 function esercizio81(){
   let nuovoArray = comici2.map((comico) => {
@@ -136,12 +136,22 @@ function esercizio81contracted() {
   });
 }
 // 8.2.	Dato l’array comici2 ottenere un nuovo array con l'aggiunta del sesso maschile
-function esercizio82(){
-  let nuovoArray = comici2.map((comico) => {
-      let variabileAppoggio = comico.sesso = 'M';
-      return comico.add(variabileAppoggio);
+comici2.forEach(function(comico){
+  comico.sesso='m';
   });
-  return nuovoArray;
+console.log(comici2);
+
+function esercizio82() {
+  return comici2.map((comico) => {
+    return comico.sesso="m";
+  });
+}
+
+function esercizio82parametrico(valore, valoreStringa) {
+  arrayObj.forEach((el) =>{
+    el.valore = valoreStringa;
+    });
+  console.log(arrayObj);
 }
 // 9.	Dato l’array char1 ottenere un altro array contenente gli elementi b1,b2,b3
 // 10.	Dato l’array char2 ottenere un altro array che ha per ogni elemento la concatenazione dell’elemento a e b di partenza divisi dal trattino (ovvero: ‘a1-b1’,’a2-b2’ etc..)
