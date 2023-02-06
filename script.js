@@ -91,14 +91,12 @@ function esercizio6mapContracted() {
 // 7.	Dato l’array comici2 fare il console log degli elementi con altezza maggiore di 155
 function esercizio7() {
   comici2.forEach((comico) => {
-    if (comico.altezza >= 155) {
-      console.log(comico);
-    }
+    if (comico.altezza > 155) console.log(comico);
   });
 }
-function esercizio7parametrico(altezzaStringa) {
+function esercizio7parametrico(altezzaNumero) {
   arrayIn.forEach((el, i) => {
-    if (el.altezza >= altezzaStringa) {
+    if (el.altezza > altezzaNumero) {
       console.log(el, i);
     }
   });
@@ -110,42 +108,54 @@ function esercizio8() {
       if (comico.name.startsWith('G')) {
         console.log(comico, i)
       }
-    }
-  )
+    })
 }
-// function esercizio8(inizialeString){
-//   comici2.forEach(
-//       (el(nomeasdasd, altezza), i) => {
-//           if(el.nomeasdasd.startsWith(inizialeString)){
-//               console.log(el, i)
-//           }
-//       }
-//   )
-// }
+function esercizio8parametrico(inizialeString, proprieta, arrayIn) {
+  arrayIn.forEach(
+    (el, i) => {
+      if (el[proprieta].startsWith(inizialeString)) {
+        console.log(el, i)
+      }
+    })
+}
 // 8.1.	Dato l’array comici2 ottenere un nuovo array con l'altezza in metri
 function esercizio81() {
   let nuovoArray = comici2.map((comico) => {
     let variabileAppoggio = comico.altezza / 100;
-    return variabileAppoggio;
+    let jsonAppoggio = {
+      name: comico.name,
+      altezza: variabileAppoggio
+    }
+    return jsonAppoggio;
   });
   return nuovoArray;
 }
-function esercizio81contracted() {
-  return comici2.map((comico) => {
-    return comico.altezza / 100;
-  });
-}
 // 8.2.	Dato l’array comici2 ottenere un nuovo array con l'aggiunta del sesso maschile
-function esercizio82map() {
-  return comici2.map((comico) => {
-    return comico.sesso = "m";
+function esercizio82() {
+  let nuovoArray = comici2.map(comico => {
+    let newJson = {
+      name: comico.name,
+      altezza: comico.altezza,
+      sesso: "m"
+    }
+    return newJson;
   });
+  return nuovoArray;
+}
+function esercizio82() {
+  let nuovoArray = comici2.map(comico => {
+    let newJson = {
+      ...comico,
+      sesso: "m"
+    }
+    return newJson;
+  });
+  return nuovoArray;
 }
 function esercizio82each() {
   comici2.forEach((el) => {
     el.sesso = "m";
   });
-  console.log(comici2);
 }
 // 9.	Dato l’array char1 ottenere un altro array contenente gli elementi b1,b2,b3
 function esercizio9() {
@@ -153,7 +163,11 @@ function esercizio9() {
     posizione = posizione + 1;
     return el = 'b' + posizione
   });
-  console.log(char1);
+}
+function esercizio9replace() {
+  return char1.map((el, posizione) => {
+    return el.replace("a", "b")
+  });
 }
 function esercizio9(lettera) {
   return arrayProva.map((el, posizione) => {
@@ -168,21 +182,51 @@ function esercizio10() {
   })
 }
 // 11.	Dato l’array disney1 ottenere un altro array contenente solo gli elementi che iniziano per 'P'
-var disney1 = ["Pippo", "Pluto", "Topolino"];
-function esercizio11(){
-  return disney1.map((el)=>{
-    if(el.startsWith('P'))
+disney1.filter(el => {
+  if (el.startsWith("P"))
     return el
-  })
-}
+})
 
+disney1.filter(el => el.startsWith("P"))
+
+function esercizio11() {
+  return disney1.filter(el => el.startsWith("P"))
+}
 // 12.	Dato l’array disney2 ottenere un altro array che contiene solo gli oggetti con type==='Mouse'
+// tip: ovvero un array contenente solo un item {name:'Topolino', type:'Mouse'}
+function esercizio12() {
+  return disney2.filter(el => el.type === "Mouse")
+}
+// 13.	Dato l’array disney1 fare il console.log dell’indice di un determinato elemento (es, l’indice di ‘Pippo’ sarà 0)
+var disney1 = ["Pippo", "Pluto", "Topolino"];
+
+function esercizio13(valore) {
+  let indexCap = disney1.indexOf(valore);
+  console.log(valore + " " + indexCap)
+}
+// 14.	Dato l’array disney2 fare il console.log dell’indice di un elemento che ha un dato name (es. se il name == ‘Pippo’ l’indice sarà 0)
 var disney2 = [
   { name: "Pippo", type: "Dog" },
   { name: "Pluto", type: "Dog" },
   { name: "Topolino", type: "Mouse" },
 ];
-asdasdasdasd
-// tip: ovvero un array contenente solo un item {name:'Topolino', type:'Mouse'}
-// 13.	Dato l’array disney1 fare il console.log dell’indice di un determinato elemento (es, l’indice di ‘Pippo’ sarà 0)
-// 14.	Dato l’array disney2 fare il console.log dell’indice di un elemento che ha un dato name (es. se il name == ‘Pippo’ l’indice sarà 0)
+function esercizio14(valore) {
+  disney2.forEach((el, i) => {
+    if (el.name == valore) console.log(el.name + " " + i)
+  });
+}
+// 15. Dato l'array disney2 ottenere un altro array che ha le stesse proprietà di partenza più il colore nero solo per gli elementi che iniziano per 'P'
+function esercizio15() {
+  disney2.filter(el => {
+    if (el.name.startsWith("P")) {
+      let nuovoArray = disney2.map(el => {
+        let newJson = {
+          ...el,
+          colore: "nero"
+        }
+        return newJson;
+      });
+      return nuovoArray;
+    }
+  });
+}
