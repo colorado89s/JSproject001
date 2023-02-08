@@ -217,16 +217,14 @@ function esercizio14(valore) {
 }
 // 15. Dato l'array disney2 ottenere un altro array che ha le stesse proprietà di partenza più il colore nero solo per gli elementi che iniziano per 'P'
 function esercizio15() {
-  disney2.filter(el => {
+  return nuovoArray = disney2.map(el => {
     if (el.name.startsWith("P")) {
-      let nuovoArray = disney2.map(el => {
-        let newJson = {
-          ...el,
-          colore: "nero"
-        }
-        return newJson;
-      });
-      return nuovoArray;
+      return nuovoOggetto = {
+        ...el,
+        colore: "nero"
+      }
+    } else {
+      return nuovoOggetto = el
     }
   });
 }
